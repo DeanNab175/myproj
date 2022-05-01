@@ -1,11 +1,11 @@
 $white: #ffffff;
-$secondaryColor: #FF8C32;
+$secondaryColor: #ff3832;
 $primaryColor: rgb(32,178,247);
 
 body {
     font-family: 'Hubballi', cursive;
     background: $primaryColor;
-    background: linear-gradient(90deg, rgba(32,178,247,1) 0%, rgba(51,87,240,1) 100%);
+    background: linear-gradient(90deg, rgba($secondaryColor, 1) 0%, rgba(51,87,240,1) 100%);
 }
 
 h1 {

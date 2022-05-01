@@ -31,23 +31,43 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
     gap: 2rem 1.5rem;
+
+    .project {
+        box-shadow: 0 0 1px 0 rgba(15,26,75,0.4);
+        padding: 1rem 1rem 3rem;
+        border-radius: 0.4rem;
+        position: relative;
+        transition: all .2s ease-in-out;
+
+        &:hover,
+        &:focus {
+            box-shadow: 4px 4px 8px 0 rgba(15,26,75,0.2);
+            transform: scale(1.005);
+        }
+
+        .image-wrap {
+            max-height: 90px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        h3 {
+            margin: 1rem 0 0;
+            font-size: 1rem;
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: .8rem;
+            margin: 0.5rem 0;
+        }
+    }
 }
 
-.projects .project {
-    box-shadow: 0 0 1px 0 rgba(15,26,75,0.4);
-    padding: 1rem 1rem 3rem;
-    border-radius: 0.4rem;
-    position: relative;
-}
-
-.image-wrap {
-    max-height: 78px;
-    overflow: hidden;
-}
-
-.projects .project img {
-    max-width: 100%;
-}
 
 .button {
     position: absolute;

@@ -1,6 +1,6 @@
 const repoTemplate = document.querySelector("[data-repo-template]")
 const projectsContainer = document.getElementById("projects")
-const reposDNID = [137197255, 365684298, 122710511, 436943506, 131506179, 157362200, 151953424]
+const reposDNID = [137197255, 365684298, 122710511, 436943506, 131506179, 157362200, 151953424, 489686429, 488164043]
 const reposDID = [79026381]
 
 
@@ -15,7 +15,7 @@ const reposDID = [79026381]
 function renderRepos(endpoint, filteredID, user) {
     fetch(endpoint)
     .then((response) => response.json())
-    .then((repos) => {
+    .then((repos) => { console.log(repos)
         const filteredRepos = repos.filter(item => {
             return filteredID.find((id) => item.id === id)
         })

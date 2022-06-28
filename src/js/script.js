@@ -15,7 +15,7 @@ const reposDID = [79026381]
 function renderRepos(endpoint, filteredID, user) {
     fetch(endpoint)
     .then((response) => response.json())
-    .then((repos) => { console.log(repos)
+    .then((repos) => {
         const filteredRepos = repos.filter(item => {
             return filteredID.find((id) => item.id === id)
         })

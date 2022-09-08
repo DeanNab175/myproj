@@ -1,6 +1,6 @@
 const repoTemplate = document.querySelector("[data-repo-template]")
 const projectsContainer = document.getElementById("projects")
-const reposDNID = [137197255, 365684298, 122710511, 436943506, 131506179, 157362200, 151953424, 489686429, 488164043]
+const reposDNID = [137197255, 365684298, 122710511, 436943506, 131506179, 157362200, 151953424, 489686429, 488164043, 534218367]
 const reposDID = [79026381]
 
 
@@ -16,6 +16,7 @@ function renderRepos(endpoint, filteredID, user) {
     fetch(endpoint)
     .then((response) => response.json())
     .then((repos) => {
+        console.log(repos)
         const filteredRepos = repos.filter(item => {
             return filteredID.find((id) => item.id === id)
         })
@@ -33,7 +34,11 @@ function renderRepos(endpoint, filteredID, user) {
                 desc.textContent = data.description
                 // id.textContent = data.id
                 link.setAttribute('href', data.homepage)
-                image.setAttribute('src', `https://raw.githubusercontent.com/${user}/${data.name}/master/screenshot.jpg`)
+                if(data.id === 534218367) {
+                    image.setAttribute('src', `images/screenshot.jpg`)
+                } else {
+                    image.setAttribute('src', `https://raw.githubusercontent.com/${user}/${data.name}/master/screenshot.jpg`)
+                }
                 
                 projectsContainer.appendChild(repoCard)
             }

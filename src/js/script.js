@@ -16,7 +16,6 @@ function renderRepos(endpoint, filteredID, user) {
     fetch(endpoint)
     .then((response) => response.json())
     .then((repos) => {
-        console.log(repos)
         const filteredRepos = repos.filter(item => {
             return filteredID.find((id) => item.id === id)
         })
